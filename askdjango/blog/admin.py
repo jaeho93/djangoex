@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, Comment
 
 
 @admin.register(Post)
@@ -10,3 +10,7 @@ class PostAdmin(admin.ModelAdmin):
         return '{}글자'.format(len(post.content))
 
 # admin.site.register(Post, PostAdmin)
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    pass
