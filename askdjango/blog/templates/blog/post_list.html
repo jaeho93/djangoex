@@ -10,7 +10,7 @@
         {% for post in post_list %}
             <li>
                 {{ post.id }}
-                <a href="/blog/{{ post.id }}/">
+                <a href="{% url "post_detail" post.id %}">
                     {{ post.title }}
                 </a>
                 
@@ -19,25 +19,5 @@
             </li>
         {% endfor %}
     </ul>
+
 {% endblock content %}
-<!doctype <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Askdjango's Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-</head>
-<body>
-
-<h1>Askdjango</h1>
-
-<p>
-    안녕하세요.
-</p>
-
-
-</body>
-</html>
