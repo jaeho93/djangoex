@@ -1,3 +1,25 @@
+{% extends "blog/layout.html" %}
+{% block content %}
+
+<form action="" method="get">
+        <input type="text" name="q" value="{{ q }}" />
+        <input type="submit" value="검색" />
+    </form>
+    
+    <ul>
+        {% for post in post_list %}
+            <li>
+                {{ post.id }}
+                <a href="/blog/{{ post.id }}/">
+                    {{ post.title }}
+                </a>
+                
+                <small>by {{ post.author }}</small>
+                <small>at {{ post.updated_at }}</small>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
 <!doctype <!DOCTYPE html>
 <html>
 <head>
@@ -16,24 +38,6 @@
     안녕하세요.
 </p>
 
-<form action="" method="get">
-    <input type="text" name="q" value="{{ q }}" />
-    <input type="submit" value="검색" />
-</form>
-
-<ul>
-    {% for post in post_list %}
-        <li>
-            {{ post.id }}
-            <a href="/blog/{{ post.id }}/">
-                {{ post.title }}
-            </a>
-            
-            <small>by {{ post.author }}</small>
-            <small>at {{ post.updated_at }}</small>
-        </li>
-    {% endfor %}
-</ul>
 
 </body>
 </html>
