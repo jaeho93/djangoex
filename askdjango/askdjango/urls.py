@@ -24,6 +24,7 @@ def root(request):
 urlpatterns = [
     #url(r'^$', root, name='root'),
     url(r'^$', lambda r: redirect('blog:post_list'), name='root'),
+
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^blog/', include('blog.urls', namespace='blog')),

@@ -3,7 +3,7 @@ import re
 from django.conf import settings
 from django.db import models
 from django.forms import ValidationError
-
+from django.core.urlresolvers import reverse
 
 def lnglat_validator(value):
     if not re.match(r'^([+-]?\d+\.?\d*),([+-]?\d+\.?\d*)$', value):
